@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center" style="width: 100%;">
+    <div class="col">
+    </div>
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">About</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Welcome to InetPower, your trusted destination for all things internet speed-related. At
+                        InetPower, we understand the frustration of dealing with slow internet connections and the
+                        importance of having a reliable tool to check your internet speed.</li>
+                    <li>Our mission is to empower users like you with the knowledge and tools needed to optimize your
+                        internet experience. Whether you're a casual user, a business professional, or an IT expert,
+                        we're here to provide accurate and comprehensive speed testing services that meet your needs.
+                    </li>
+                    <li>Backed by cutting-edge technology and a team of dedicated professionals, InetPower is committed
+                        to delivering fast, accurate, and reliable speed test results. Our user-friendly interface makes
+                        it easy for anyone to quickly assess their internet speed and identify potential issues.</li>
+                    <li>But we're more than just a speed test tool. We're passionate about helping users make informed
+                        decisions about their internet service providers and advocating for better internet connectivity
+                        for all. With InetPower, you'll have the insights and resources you need to get the most out of
+                        your internet connection.</li>
+                    <li>Thank you for choosing InetPower❤️</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-success"><a style="text-decoration: none;"
+                        class="text-light" href="{% url 'inetpower:base' %}">back to check speed</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

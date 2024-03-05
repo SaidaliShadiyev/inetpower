@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center" style="width: 100%;">
+    <div class="col">
+    </div>
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Contact Us</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>We value your feedback and inquiries at InetPower. If you have any questions, concerns, or
+                        suggestions regarding our internet speed check services or any other aspect of our platform,
+                        please don't hesitate to reach out to us. Our dedicated team is here to assist you promptly and
+                        ensure your experience with InetPower is smooth and seamless.
+                    </li>
+                    <li>You can contact us via email at bafaevvv@gmail.com.
+                        We strive to respond to all inquiries within 24 hours during our operating hours, Monday through
+                        Friday, 9:00 AM to 6:00 PM (EST).
+                    </li>
+                    <li>We look forward to hearing from you and providing the support you need to optimize your internet
+                        experience.</li>
+                    <li>Thank you for choosing InetPower❤️</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-success"><a style="text-decoration: none;"
+                        class="text-light" href="{% url 'inetpower:base' %}">back to check speed</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

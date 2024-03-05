@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center" style="width: 100%;">
+    <div class="col">
+    </div>
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Terms and Conditions</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li><b>Accuracy of Information:</b>While we strive to provide accurate and reliable internet speed
+                        test results, we cannot guarantee the accuracy or completeness of the data collected. Factors
+                        such as network congestion, hardware limitations, and internet service provider throttling may
+                        impact test results.
+                    </li>
+                    <li><b>Acceptable Use:</b>You agree to use our internet speed check tool for lawful purposes only
+                        and in compliance with all applicable laws and regulations. You may not use our services to
+                        engage in any illegal or unauthorized activities, including but not limited to hacking,
+                        spamming, or distributing malware.
+                    </li>
+                    <li><b>Intellectual Property:</b>All content, including but not limited to text, graphics, logos,
+                        and images, displayed on the InetPower website is the property of InetPower or its licensors and
+                        is protected by copyright and other intellectual property laws. You may not reproduce,
+                        distribute, or modify any content without prior written permission from InetPower.
+                    </li>
+                    <li><b>Third-Party Links:</b>Our website may contain links to third-party websites or services.
+                        InetPower is not responsible for the content or privacy practices of these third parties. You
+                        access and use third-party websites at your own risk.
+                    </li>
+                    <li><b>Limitation of Liability:</b>InetPower and its affiliates, directors, officers, employees,
+                        agents, and licensors shall not be liable for any direct, indirect, incidental, special, or
+                        consequential damages arising out of or in any way connected with your use of our website or
+                        internet speed check tool.
+                    </li>
+                    <li><b>Modification of Terms:</b>InetPower reserves the right to modify or update these Terms and
+                        Conditions at any time without prior notice. By continuing to use our website and internet speed
+                        check tool after any changes are made, you agree to be bound by the revised Terms and Conditions.
+                    </li>
+                    <li>If you have any questions or concerns about these Terms and Conditions, please contact us at bafaevvv@gmail.com.</li>
+                    <li><i>Last updated: [05.03.2024]</i></li>
+                    <li>Thank you for using InetPower❤️</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-success"><a style="text-decoration: none;"
+                        class="text-light" href="{% url 'inetpower:base' %}">back to check speed</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}
+InetPower
+{% endblock title %}
+
+{% block content %}
+
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center" style="width: 100%; margin-top: 100px;">
+    <div class="col">
+    </div>
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">START TESTING</h4>
+            </div>
+            <div class="card-body">
+                <h5>Download speed:</h5>
+                <progress id="downloadProgress" value="0" max="100" class="btn btn-success"></progress>
+                <p id="downloadSpeed"></p>
+
+                <h5>Upload speed:</h5>
+                <progress id="uploadProgress" value="0" max="100" class="btn btn-success"></progress>
+                <p id="uploadSpeed"></p>
+
+                <button id="startTest" class="btn btn-success">Start test</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const startTest = document.getElementById('startTest');
+    const downloadProgress = document.getElementById('downloadProgress');
+    const uploadProgress = document.getElementById('uploadProgress');
+    const downloadSpeed = document.getElementById('downloadSpeed');
+    const uploadSpeed = document.getElementById('uploadSpeed');
+
+    startTest.addEventListener('click', () => {
+        startTest.disabled = true;
+
+        const xhrDownload = new XMLHttpRequest();
+        xhrDownload.open('GET', '/path/to/large/file', true);
+        xhrDownload.responseType = 'blob';
+        xhrDownload.onprogress = (event) => {
+            if (event.lengthComputable) {
+                const percent = Math.round((event.loaded / event.total) * 100);
+                downloadProgress.value = percent;
+            }
+        };
+        xhrDownload.onload = () => {
+            const elapsed = performance.now() - startTime;
+            const speed = (xhrDownload.response.size / elapsed) * 1000;
+            downloadSpeed.textContent = `${speed.toFixed(2)} KB/s`;
+            startTest.disabled = false;
+        };
+        xhrDownload.send();
+
+        const xhrUpload = new XMLHttpRequest();
+        xhrUpload.open('POST', '/path/to/endpoint', true);
+        xhrUpload.upload.onprogress = (event) => {
+            if (event.lengthComputable) {
+                const percent = Math.round((event.loaded / event.total) * 100);
+                uploadProgress.value = percent;
+            }
+        };
+        xhrUpload.onload = () => {
+            const elapsed = performance.now() - startTime;
+            const speed = (event.total / elapsed) * 1000;
+            uploadSpeed.textContent = `${speed.toFixed(2)} KB/s`;
+            startTest.disabled = false;
+        };
+        xhrUpload.send(new Blob(['hello world']));
+
+        const startTime = performance.now();
+    });
+</script>
+
+{% endblock %}

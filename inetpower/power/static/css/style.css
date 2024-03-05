@@ -1,0 +1,9 @@
+#google_translate_element {
+    position: absolute;
+    left: 200px;
+    top: 23px;
+}
+
+.goog-te-banner {
+    display: none;
+}
